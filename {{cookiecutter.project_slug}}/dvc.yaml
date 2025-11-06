@@ -1,0 +1,15 @@
+stages:
+  run_experiment:
+    cmd: >-
+      export PYTHONHASHSEED=0 &&
+      export PYTHONPATH=$(pwd) &&
+      mkdir -p result &&
+      python framework/hydra_init.py -cn config.yaml call=main 
+    deps:
+      - src/
+      - data/
+      - conf/
+    outs:
+      - result/
+
+    

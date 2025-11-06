@@ -1,0 +1,17 @@
+# pyproject.toml
+# Copyright (c) {{cookiecutter.author_name}}.
+
+[project]
+name = "{{cookiecutter.project_slug}}"
+version = "0.1.0"
+requires-python = ">={{cookiecutter.python_version}}"
+dependencies = [
+    "dvc",
+    "mlflow",
+    "hydra-core",
+    "omegaconf",
+    "optuna",
+    "optuna-dashboard", 
+    "numpy",
+    "torch",
+]

@@ -1,0 +1,8 @@
+tracking_uri: 
+experiment_name: default_experiment
+run_name: run_${now:%Y-%m-%d_%H-%M-%S}
+auto_logging:
+  config: true
+  location: true
+  system_metrics: true
+

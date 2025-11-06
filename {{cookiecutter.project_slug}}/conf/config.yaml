@@ -1,0 +1,18 @@
+call: main
+seed: 42  
+params:
+  param_example: GEC
+
+hydra:
+  run:
+    dir: ./
+  output_subdir: null
+  job_logging:
+    version: 1
+    handlers:
+      console:
+        class: logging.StreamHandler
+        stream: ext://sys.stdout
+    root:
+      handlers: [console]
+    disable_existing_loggers: false
