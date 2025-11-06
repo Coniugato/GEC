@@ -15,6 +15,8 @@ uv venv
 
 source .venv/bin/activate
 
+mkdir -p data
+
 uv sync
 
 dvc init
