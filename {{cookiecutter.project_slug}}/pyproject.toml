@@ -10,8 +10,6 @@ dependencies = [
     "mlflow",
     "hydra-core",
     "omegaconf",
-    "optuna",
-    "optuna-dashboard", 
     "numpy",
     "torch",
 ]
