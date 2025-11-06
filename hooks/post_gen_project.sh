@@ -15,11 +15,11 @@ uv venv
 
 source .venv/bin/activate
 
-mkdir -p data
-
 uv sync
 
 dvc init
+
+dvc add data
 
 git add .
 git commit -m "Initial commit from cookiecutter template"
