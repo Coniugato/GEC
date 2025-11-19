@@ -3,4 +3,8 @@ mlruns/
 __pycache__/
 .dvc/cache/
 .dvc/tmp/
-/result
+data/
+result/
+wandb/
+scripts/
+.env

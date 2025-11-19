@@ -1,5 +1,6 @@
 tracking_uri: 
-experiment_name: default_experiment
+mlflow_experiment_name: 
+project_name: default_project
 run_name: run_${now:%Y-%m-%d_%H-%M-%S}
 auto_logging:
   config: true

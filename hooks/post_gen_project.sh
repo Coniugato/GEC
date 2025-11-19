@@ -15,11 +15,25 @@ uv venv
 
 source .venv/bin/activate
 
+if [ "{{ cookiecutter.additional_dependency_file }}" != "null" ]; then
+    cat {{ cookiecutter.additional_dependency_file }} >> pyproject.toml
+else
+    # if exists, add from the path in the env variable ADDITIONAL_DEP_FILE
+    if [ -n "$ADDITIONAL_DEP_FILE" ] && [ -f "$ADDITIONAL_DEP_FILE" ]; then
+        cat "$ADDITIONAL_DEP_FILE" >> pyproject.toml
+    fi
+    else
+        echo "No additional dependency file provided."
+    fi
+fi
+
 uv sync
 
 dvc init
 
 dvc add data
+
+
 
 git add .
 git commit -m "Initial commit from cookiecutter template"
