@@ -10,6 +10,6 @@ Also see [NOTICES](NOTICES) for the list of third-party libraries used in this p
 ## How to Create a Project
 After installing `cookiecutter` in some way, run the following command:
 ```
-cookiecutter GEC
+cookiecutter https://github.com/Coniugato/GEC.git
 ```
 This one-liner generates a project with initialized `git`, `uv`, `dvc`, and more. After that, you can navigate to the generated directory and customize the project by editing the `src` directory, `conf` directory, `dvc.yaml`, and so on.
