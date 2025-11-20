@@ -15,7 +15,7 @@ uv venv
 
 source .venv/bin/activate
 
-if [ "{{ cookiecutter.ndency_file }}" != "null" ]; then
+if [ "{{ cookiecutter.dependency_file }}" != "" ]; then
     cat {{ cookiecutter.additional_dependency_file }} >> pyproject.toml
 else
     # if exists, add from the path in the env variable ADDITIONAL_DEP_FILE
