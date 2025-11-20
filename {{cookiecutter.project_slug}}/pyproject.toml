@@ -12,4 +12,5 @@ dependencies = [
     "omegaconf",
     "numpy",
     "torch",
+    "wandb",
 ]
