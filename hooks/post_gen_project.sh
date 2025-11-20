@@ -63,7 +63,8 @@ EOF
 ls
 chmod u+x scripts/*
 mv scripts/* .venv/bin/
-rmdir scripts
+mv .venv/bin/batch_setting.sh scripts/batch_setting.sh
+mv .venv/bin/batch_run.sh scripts/batch_run.sh
 
 git add -A
 git commit -m "Initial commit from cookiecutter template"

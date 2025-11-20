@@ -13,14 +13,14 @@ python $MAIN_REPO_PATH/framework/dvc_queue.py --action run_one --id ${EXP_NAME} 
 EOF
 )
 
-JOB_SCRIPT=$(cat ${MAIN_REPO_PATH}/.venv/bin/batch_setting.sh)$'\n'"$JOB_SCRIPT_CONTENT"
+JOB_SCRIPT=$(cat ${MAIN_REPO_PATH}/scripts/batch_setting.sh)$'\n'"$JOB_SCRIPT_CONTENT"
 
 touch __job__temporary__.sh
 echo "$JOB_SCRIPT" > __job__temporary__.sh
 chmod +x __job__temporary__.sh
 
-chmod +x ${MAIN_REPO_PATH}/.venv/bin/batch_run.sh
-HPC_JOB_ID=$(${MAIN_REPO_PATH}/.venv/bin/batch_run.sh __job__temporary__.sh)
+chmod +x ${MAIN_REPO_PATH}/scripts/batch_run.sh
+HPC_JOB_ID=$(${MAIN_REPO_PATH}/scripts/batch_run.sh __job__temporary__.sh)
 rm __job__temporary__.sh
 
 echo "Submitted job: $HPC_JOB_ID (Exp: $EXP_NAME)"
