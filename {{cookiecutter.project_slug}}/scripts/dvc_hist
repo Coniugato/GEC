@@ -1,0 +1,3 @@
+#!/bin/bash
+# to show the DVC experiment history
+dvc exp show --all-commits

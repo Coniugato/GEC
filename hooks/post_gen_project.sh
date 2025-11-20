@@ -64,7 +64,7 @@ ls
 chmod u+x scripts/*
 mv scripts/* .venv/bin/
 
-git add .
+git add -A
 git commit -m "Initial commit from cookiecutter template"
 
 echo "Project {{ cookiecutter.project_name }} is ready!"

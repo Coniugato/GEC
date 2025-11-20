@@ -1,0 +1,25 @@
+#!/bin/bash
+# dvc_ls <file_path> to list files from DVC experiments
+# --exp experiment name. if not provided, use the random one (implementation as of now; later it should be changed to select the last one)
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --exp)
+      EXP_NAME="$2"
+      shift 2
+      ;;
+    *)
+      FILE_PATH="$1"
+      shift
+      ;;
+  esac
+done
+
+
+#これは実際には最近の実験にならない。困る。
+if [ -z "$EXP_NAME" ]; then
+  EXP_NAME=$(dvc exp list  | sed -e 's/.*\[\(.*\)\].*/\1/' | head -n2 | tail -n1)
+fi
+
+
+dvc list . $FILE_PATH  --rev $EXP_NAME 
