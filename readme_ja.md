@@ -11,6 +11,6 @@ General Experiment Control (GEC) は、機械学習実験の管理と制御を�
 ## プロジェクトの作り方
 `cookiecutter`をなんらかの形でインストールした上で、以下のコマンドを実行してください。
 ```
-cookiecutter GEC 
+cookiecutter https://github.com/Coniugato/GEC.git
 ```
 このワンライナーで、`git`、`uv`、`dvc`などの初期化が完了されたプロジェクトが生成されます。その後、生成されたディレクトリに移動して、`src`ディレクトリや`conf`ディレクトリ、`dvc.yaml`などを編集してプロジェクトをカスタマイズすることができます。
