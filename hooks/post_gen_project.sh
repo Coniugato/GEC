@@ -33,6 +33,7 @@ dvc init
 dvc add data
 
 python - <<EOF
+import os
 cookiecutter_input_key = "{{ cookiecutter.wandb_api_key }}"
 
 system_env_key = os.environ.get("WANDB_API_KEY", "")
@@ -57,6 +58,10 @@ else:
     print("Warning: No WANDB_API_KEY found in input or environment variables. .env created with empty key.")
 EOF
 
+
+#scriptの中のすべてのコマンドにchmod u+xを付与し、./.venv/binに移動
+chmod u+x scripts/*.sh
+mv scripts/* .venv/bin/
 
 git add .
 git commit -m "Initial commit from cookiecutter template"
