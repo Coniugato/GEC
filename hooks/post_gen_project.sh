@@ -60,7 +60,8 @@ EOF
 
 
 #scriptの中のすべてのコマンドにchmod u+xを付与し、./.venv/binに移動
-chmod u+x scripts/*.sh
+ls
+chmod u+x scripts/*
 mv scripts/* .venv/bin/
 
 git add .
