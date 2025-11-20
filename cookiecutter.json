@@ -4,6 +4,6 @@
     "author_name": "Your Name",
     "python_version": "3.11",
     "mlflow_tracking_uri": "./mlruns",
-    "wandb_api_key": "{{wandb_api_key}}",
+    "wandb_api_key": "",
     "additional_dependency_file": null
 }

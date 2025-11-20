@@ -33,6 +33,30 @@ dvc init
 
 dvc add data
 
+python - <<EOF
+cookiecutter_input_key = "{{ cookiecutter.wandb_api_key }}"
+
+system_env_key = os.environ.get("WANDB_API_KEY", "")
+final_api_key = ""
+
+if cookiecutter_input_key.strip():
+    final_api_key = cookiecutter_input_key
+elif system_env_key.strip():
+    print(f"Info: 'wandb_api_key' was not provided via cookiecutter. Using system environment variable WANDB_API_KEY.")
+    final_api_key = system_env_key
+
+env_file_path = ".env"
+
+env_content = f"WANDB_API_KEY={final_api_key}\n"
+
+with open(env_file_path, "a") as f:
+    f.write(env_content)
+
+if final_api_key:
+    print(".env file has been updated with WANDB_API_KEY.")
+else:
+    print("Warning: No WANDB_API_KEY found in input or environment variables. .env created with empty key.")
+EOF
 
 
 git add .
